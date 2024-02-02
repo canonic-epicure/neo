@@ -8,7 +8,10 @@ class MainModel extends Model {
     static config = {
         className: 'Neo.examples.table.container.MainModel',
 
-        fields: [{
+        fields: [ {
+            name: 'escapeHtml',
+            type: 'html'
+        }, {
             name: 'colspan',
             type: 'Object'
         }, {

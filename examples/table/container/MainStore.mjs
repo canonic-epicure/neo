@@ -15,37 +15,44 @@ class MainStore extends Store {
             country  : 'Germany',
             firstname: 'Tobias',
             githubId : 'tobiu',
-            lastname : 'Uhlig'
+            lastname : 'Uhlig',
+            escapeHtml: '<span>test</span>'
         }, {
             country  : 'USA',
             firstname: 'Rich',
             githubId : 'rwaters',
-            lastname : 'Waters'
+            lastname : 'Waters',
+            escapeHtml: ''
         }, {
             country  : 'Germany',
             firstname: 'Nils',
             githubId : 'mrsunshine',
-            lastname : 'Dehl'
+            lastname : 'Dehl',
+            escapeHtml: ''
         }, {
             country  : 'USA',
             firstname: 'Gerard',
             githubId : 'camtnbikerrwc',
-            lastname : 'Horan'
+            lastname : 'Horan',
+            escapeHtml: ''
         }, {
             country  : 'Slovakia',
             firstname: 'Jozef',
             githubId : 'jsakalos',
-            lastname : 'Sakalos'
+            lastname : 'Sakalos',
+            escapeHtml: ''
         }, {
             country  : 'Germany',
             firstname: 'Bastian',
             githubId : 'bhaustein',
-            lastname : 'Haustein'
+            lastname : 'Haustein',
+            escapeHtml: ''
         }, {
             colspan  : {firstname: 3},
             country  : 'Germany',
             firstname: 'Colspan 3',
-            githubId : 'random'
+            githubId : 'random',
+            escapeHtml: ''
         }]
     }
 }

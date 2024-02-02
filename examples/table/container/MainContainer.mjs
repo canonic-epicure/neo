@@ -163,7 +163,13 @@ class MainContainer extends ConfigurationViewport {
 
                             return button.vdom;
                     }
-                }
+                },
+                {
+                    dataField: 'escapeHtml',
+                    text     : 'Escaped',
+                    htmlEncode : true,
+                    type: 'html'
+                },
             ]
         });
     }

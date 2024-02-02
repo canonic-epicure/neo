@@ -23,7 +23,7 @@ class StringUtil extends Base {
      * @member {RegExp} charPattern
      * @static
      */
-    static charPattern = /[&<>"'$\\]/g
+    static charPattern = /[&<>"'$\\/]/g
     /**
      * @member {RegExp} entityPattern
      * @static
@@ -49,16 +49,20 @@ class StringUtil extends Base {
             return value;
         }
 
-        return value.replace(me.charPattern, me.getEntityFromChar.bind(me));
+        const foo = value.replace(me.charPattern, me.getEntityFromChar.bind(me));
+        console.log(foo);
+        return foo;
     }
+
 
     /**
      * Get char equivalent of a mapped entity
      * @param {String} entity
      */
     static getCharFromEntity(entity) {
-        const mappedChar = Object.keys(this.charEntityMap).find(key => this.charEntityMap[key] === entity);
-        return mappedChar || entity;
+        return this.charEntityMap[entity] || entity;
+        // const mappedChar = Object.keys(this.charEntityMap).find(key => this.charEntityMap[key] === entity);
+        // return mappedChar || entity;
     }
 
     /**

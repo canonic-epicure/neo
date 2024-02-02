@@ -1,5 +1,6 @@
 import Component from '../component/Base.mjs';
 import VDomUtil  from '../util/VDom.mjs';
+import String    from '../util/String.mjs';
 
 /**
  * @class Neo.table.View
@@ -68,7 +69,8 @@ class View extends Component {
             fieldValue = record[dataField],
             hasStore   = tableContainer.store?.model, // todo: remove as soon as all tables use stores (examples table)
             vdom       = me.vdom,
-            cellConfig, rendererOutput;
+            cellConfig, rendererOutput,
+            htmlEncode  = column.htmlEncode || false;
 
         if (fieldValue === null || fieldValue === undefined) {
             fieldValue = ''
@@ -96,7 +98,8 @@ class View extends Component {
             case 'String': {
                 rendererOutput = {
                     cls : cellCls,
-                    html: rendererOutput?.toString()
+//                    html: htmlEncode ? rendererOutput?.toString().replace('"', '&quot;') : rendererOutput?.toString()
+                    html: htmlEncode ? String.escapeHtml(rendererOutput?.toString() || '') : rendererOutput?.toString()
                 };
                 break;
             }
